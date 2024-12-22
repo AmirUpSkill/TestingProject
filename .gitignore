@@ -1,0 +1,29 @@
+# Create .gitignore file
+echo "# Python virtual environment
+ts/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Robot Framework output files
+log.html
+output.xml
+report.html
+selenium-screenshot-*.png
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment variables
+.env
+.env.local
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/" > .gitignore

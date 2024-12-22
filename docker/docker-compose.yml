@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:latest
+    container_name: testingproject-db-1
+    environment:
+      MYSQL_ROOT_PASSWORD: amir_adam_pwd  # Root password for MySQL
+      MYSQL_DATABASE: test_db            # Name of the database to be created
+      MYSQL_USER: amir_user              # MySQL user name
+      MYSQL_PASSWORD: amir_adam_pwd      # Password for the MySQL user
+    ports:
+      - "3306:3306"                      # Maps the MySQL default port to the host
+    volumes:
+      - mysql_data:/var/lib/mysql        # Persistent storage for database files
+      - ./init:/docker-entrypoint-initdb.d  # Mount initialization scripts
+
+volumes:
+  mysql_data:                            # Named volume for data persistence
